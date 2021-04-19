@@ -98,6 +98,7 @@ td {
 body {
     background-image: url(../resources/background.jpg);
     background-attachment: fixed;
+    background-size: cover;
     padding: 0;
     margin: 0;
 }
