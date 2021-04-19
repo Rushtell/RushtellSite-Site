@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -22,6 +23,15 @@ namespace RushtellSite
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // Задаем параметр куда будет перенаправляться не авторизированный пользователь
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option =>
+                {
+                    option.LoginPath = new PathString("/Account/Login");
+                });
+
+            services.AddControllersWithViews();
+
             services.AddMvc(e => e.EnableEndpointRouting = false);
         }
 
@@ -29,10 +39,16 @@ namespace RushtellSite
         {
             app.UseStaticFiles();
 
+            // Включаем MiddleWare компоненты для авторизации
+            app.UseAuthentication();
+
+            app.UseAuthorization();
+
             app.UseMvc(e =>
-            {
-                e.MapRoute("default", "{controller=Home}/{action=mainpage}");
-            });
+            e.MapRoute(
+                default,
+                "{controller=Home}/{action=Index}"
+                ));
         }
     }
 }

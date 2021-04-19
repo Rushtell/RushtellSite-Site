@@ -1,10 +1,4 @@
-﻿body {
-    margin-bottom: 60px;
-    background: url(../backgroundimage.jpg);
-    background-repeat: repeat;
-    background-position: center;
-}
-.footer {
+﻿.footer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -48,15 +42,8 @@
 }
 
 .block1 {
-    padding: 30px;
-    background-color: whitesmoke;
-    border: inset;
-    border-width: 5px;
-    border-radius: 10px;
-    width: 40%;
-    position: absolute;
-    overflow: auto;
-    height: 60%;
+    display: flex;
+    justify-content: center;
 }
 
 .block2 {
@@ -73,8 +60,225 @@
 }
 
 .block3 {
-    background-color: antiquewhite;
-    border: groove;
-    border-width: 2px;
-    padding: 5px;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+    .block3 > table {
+        border: 0;
+        border-collapse: unset;
+    }
+
+        .block3 > table > tbody > tr > td
+        {
+            border: 0;
+            padding: 5px;
+        }
+
+        /*New CSS Styles*/
+
+a {
+    color: black;
+    font-style: italic;
+}
+
+th {
+    border: 1px solid black
+}
+
+td {
+    border: 1px solid black
+}
+
+body {
+    background-image: url(../resources/background.jpg);
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    flex: 0 0 auto;
+    padding: 0px;
+}
+
+.section-img {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    flex-wrap: nowrap;
+}
+
+.img-anime-right {
+}
+
+header {
+    display: flex;
+    margin: 0 10%;
+    justify-content: space-between;
+}
+
+.block-header-nav {
+}
+
+.block-header-auto {
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+    .nav-menu > a {
+        margin: 20px;
+        font-size: 20px;
+        color: black;
+        text-decoration: none;
+    }
+
+        .nav-menu > a:hover {
+            text-decoration: underline;
+        }
+
+.first-block {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10% 10px 10%;
+}
+
+.contact-info {
+}
+
+    .contact-info > div {
+        margin-top: 415px;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .contact-info > div > a {
+            font-size: 30px;
+            color: black;
+            margin: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+            .contact-info > div > a:hover {
+                text-decoration: underline;
+            }
+
+.aut-block {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+    .aut-block > a {
+        font-size: 20px;
+        margin: 20px;
+    }
+
+.classP {
+    font-size: 20px;
+    margin: 20px;
+}
+
+.RegAndLog {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: wheat;
+    border: 3px outset grey;
+    border-radius: 10px;
+    background-image: url(../resources/LogImg3.jpg);
+    background-size: cover;
+}
+
+    .RegAndLog div {
+        margin: 10px;
+    }
+
+.secRAL {
+    display: flex;
+    justify-content: center;
+}
+
+.form-group2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.validation {
+    color: red;
+}
+
+.standart-light-button {
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+    .standart-light-button:hover {
+        background-color: aqua;
+    }
+
+    .input-mod {
+        padding: 3px;
+        border-radius: 5px;
+    }
+
+.main-table {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.table-data-client {
+    border: 3px solid black;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+
+    .table-data-client > tbody > tr > td  {
+        padding: 5px;
+    }
+
+    .table-data-client > tbody > tr > th {
+        border: 3px solid black;
+        padding: 5px;
+    }
+
+.cap {
+    display: none;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #000000d4;
+    justify-content: center;
+}
+
+.add-menu {
+    display: flex;
+    position: fixed;
+    z-index: 11;
+}
+
+.block-for-menu {
+    display: none;
+    top: 30%;
+    position: fixed;
+    width: 100%;
+    justify-content: center;
+    z-index: 11;
 }

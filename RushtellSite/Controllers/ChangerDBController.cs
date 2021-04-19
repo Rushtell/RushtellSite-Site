@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 using RushtellSite.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RushtellSite.Controllers
 {
@@ -18,6 +19,7 @@ namespace RushtellSite.Controllers
             this.log = log;
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult AddPage()
         {
@@ -25,6 +27,7 @@ namespace RushtellSite.Controllers
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult AddToDB(int Id, string Name, int Deposit, string Type)
         {
@@ -39,6 +42,7 @@ namespace RushtellSite.Controllers
             return Redirect("~/Home/index");
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult DeleteFromDB(int Id)
         {

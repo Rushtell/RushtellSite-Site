@@ -1,12 +1,13 @@
 ﻿@{
-    Layout = "_Layout";
-    ViewData["Title"] = "DB Page";
+    ViewData["title"] = "Главная";
 }
 
+
 <div class="block1">
-    <table border="1" style="border-width: 2px; border: groove;">
-        <tr><th style="width: 1%">Id</th> <th style="width: 1%">Name</th> <th>Deposit</th> <th>Type</th></tr>
-        @foreach (var item in ViewBag.Clients)
+    <div class="main-table">
+        <table class="table-data-client">
+            <tr><th style="width: 1%">Id</th> <th style="width: 1%">Name</th> <th>Deposit</th> <th>Type</th></tr>
+            @foreach (var item in ViewBag.Clients)
         {
             <tr>
                 <td>@item.Id</td>
@@ -15,24 +16,51 @@
                 <td>@item.Type</td>
             </tr>
         }
-    </table>
-    <form style="margin: 20px" action="~/ChangerDB/AddPage" method="get">
-        <input style="height: 40px; width: 80px;" type="submit" value="Добавить" />
-    </form>
-    <form action="~/ChangerDB/DeleteFromDB" method="post">
-        <input type="text" placeholder="Id удаляемой строки" name="Id" />
-        <input type="submit" value="Удалить" />
-    </form>
+        </table>
+        <form style="margin: 20px" action="~/ChangerDB/AddPage" method="get">
+            <input class="standart-light-button cap-active" type="button" value="Добавить" />
+        </form>
+        <form action="~/ChangerDB/DeleteFromDB" method="post">
+            <input class="input-mod" type="text" placeholder="Id удаляемой строки" name="Id" />
+            <input type="submit" value="Удалить" class="standart-light-button" />
+        </form>
+    </div>
 </div>
 
-<div class="block2">
-    <p>Сайт поднят: @ViewBag.timerA с</p>
+<div class="cap"></div>
+<div class="block-for-menu">
+    <div class="add-menu">
+        <form action="~/ChangerDB/AddToDB" method="post" class="block3">
+            <h3>Добавить клиента:</h3>
+            <table class="">
+                <tr><td>ID:</td><td><input type="text" name="Id" placeholder="Введите ID" class="input-mod" /></td></tr>
+                <tr><td>Name:</td><td><input type="text" name="Name" placeholder="Введите имя" class="input-mod" /></td></tr>
+                <tr><td>Deposit:</td><td><input type="text" name="Deposit" placeholder="Введите число" class="input-mod" /></td></tr>
+                <tr><td>Type:</td><td><input type="text" name="Type" placeholder="Введите тип" class="input-mod" /></td></tr>
+            </table><br />
+            <input type="submit" value="Добавить" class="standart-light-button" />
+        </form>
+    </div>
 </div>
 
 <br />
-
-<div style="justify-content: center; display: flex; margin: 20px;">
-    <input style="padding: 10px;" type="button" value="Google" onclick="google()" />
-</div>
-
-
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,11 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <p class="classP">@User.Identity.Name авторизован</p>
+    <a href="/Account/LogOut">Выйти</a>
+}
+else
+{
+    <a href="/Account/Login">Войти</a>
+    <a href="/Account/Register">Зарегистрироваться</a>
+}
+

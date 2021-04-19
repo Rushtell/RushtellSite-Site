@@ -1,27 +1,45 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
 <head>
-    <title>@ViewData["Title"]</title>
+    <title>@ViewData["title"]</title>
     <link href="~/css/site.css" rel="stylesheet" />
-    <script src="~/js/site.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </head>
 <body>
-    <h1 class="head">
-        <img src="~/files/action_assassins_creed_game_video_icon_183192.png" style="margin-right: 20px" />
-        <span class="b">Rushtell Test Site</span>
-        <img src="~/files/action_assassins_creed_game_video_icon_183192.png" style="margin-left: 20px" />
-    </h1>
-
-    @RenderBody()
-
-    <div style="justify-content: center; display: flex; margin: 20px;">
-        <form action="~/Home/Index" method="get" style="margin: 0;">
-            <input style="padding: 10px;" type="submit" value="На главную" />
-        </form>
-    </div>
+    <header>
+        <div class="block-header-nav">
+            <nav class="nav-menu">
+                <a href="/Home/Index">Главная</a>
+                <a href="/Home/Second">Вторая</a>
+            </nav>
+        </div>
+        <div class="block-header-auto">
+            <nav class="aut-block">
+                @await Component.InvokeAsync("Auth")
+            </nav>
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <map name="yamianime">
+            <area coords="500,240,550,280" shape="rect" href="https://yummyanime.club" title="На ямианиме!" target="_blank" alt="ямианиме" />
+        </map>
+        <section class="section-img">
+            <img class="img-anime-right" src="~/resources/anime2.png" alt="картинка" />
+            <div class="contact-info">
+                <div>
+                    <a href="https://discord.com/users/275132291708092416" target="_blank">Discord</a>
+                    <a href="https://steamcommunity.com/id/Rushtell/" target="_blank">Steam</a>
+                    <a href="mailto:ultematum091@gmail.com">EMail</a>
+                </div>
+            </div>
+            <img class="img-anime-right" src="~/resources/anime.png" usemap="#yamianime" alt="картинка" />
+        </section>
+    </footer>
 </body>
 </html>
-<footer style="width: auto">
-    <h1 class="footer">
-        <span class="b2">©Rushtell Контактная информация: Discord: Rushtell#0591</span>
-    </h1>
-</footer>

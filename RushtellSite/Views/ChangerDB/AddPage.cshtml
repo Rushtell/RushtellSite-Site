@@ -1,16 +1,15 @@
 ﻿@{
-    Layout = "_Layout";
-    ViewData["Title"] = "Privacy";
+    ViewData["Title"] = "Second";
 }
 
 <div class="block1">
     <form action="~/ChangerDB/AddToDB" method="post" class="block3">
-        <table>
-            <tr><td>ID:</td><td><input type="text" name="Id" placeholder="Введите ID" /></td></tr>
-            <tr><td>Name:</td><td><input type="text" name="Name" placeholder="Введите имя" /></td></tr>
-            <tr><td>Deposit:</td><td><input type="text" name="Deposit" placeholder="Введите число" /></td></tr>
-            <tr><td>Type:</td><td><input type="text" name="Type" placeholder="Введите тип" /></td></tr>
+        <table class="">
+            <tr><td>ID:</td><td><input type="text" name="Id" placeholder="Введите ID" class="input-mod" /></td></tr>
+            <tr><td>Name:</td><td><input type="text" name="Name" placeholder="Введите имя" class="input-mod" /></td></tr>
+            <tr><td>Deposit:</td><td><input type="text" name="Deposit" placeholder="Введите число" class="input-mod" /></td></tr>
+            <tr><td>Type:</td><td><input type="text" name="Type" placeholder="Введите тип" class="input-mod" /></td></tr>
         </table><br />
-        <input type="submit" value="Добавить" style="height: 40px; width: 80px;" />
+        <input type="submit" value="Добавить" class="standart-light-button" />
     </form>
 </div>
